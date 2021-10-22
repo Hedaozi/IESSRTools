@@ -1,0 +1,98 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:IESSRTools.Desktop.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="using:IESSRTools.Desktop.Views"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="IESSRTools.Desktop.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="IESSR Tools Desktop"
+        FontFamily="Centaur" FontSize="16">
+
+  <Design.DataContext>
+    <vm:MainWindowViewModel/>
+  </Design.DataContext>
+
+  <Window.Styles>
+    <StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/RadioButton.xaml"/>
+    <Style Selector="RadioButton.Navigator">
+      <Setter Property="Foreground" Value="Black"/>
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="Margin" Value="0 2 0 0"/>
+      <Setter Property="VerticalContentAlignment" Value="Center"/>
+      <Setter Property="HorizontalContentAlignment" Value="Left"/>
+      <Setter Property="BorderBrush" Value="Transparent"/>
+      <Setter Property="BorderThickness" Value="0"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type RadioButton}">
+            <Grid x:Name="templateRoot" Background="{TemplateBinding Background}" Width="{TemplateBinding Width}">
+              <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}"
+                                Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 20"
+                                Focusable="False" RecognizesAccessKey="True"/>
+            </Grid>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    
+    <Style Selector="RadioButton:pointerover">
+      <Setter Property="Background" Value="#FFEEEEEE"/>
+    </Style>
+
+    <Style Selector="RadioButton:checked">
+      <Setter Property="Background" Value="#FFF8F8F8"/>
+    </Style>
+    
+  </Window.Styles>
+  
+  
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="50"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="150"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+
+    <Grid Margin="0 5 0 0" Grid.ColumnSpan="2">
+      <Image Source="/Assets/icon.png" Stretch="Uniform" HorizontalAlignment="Left"/>
+      <Border BorderBrush="LightGray" BorderThickness="0 0 0 0.5"/>
+    </Grid>
+
+    <Border Grid.Row="1" Background="#FFEAEAEA" BorderBrush="LightGray" BorderThickness="0 0 0.5 0">
+      <Grid>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+          <RadioButton Content="Program" IsChecked="True" Width="150" Classes="Navigator"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10">
+          <Label Content="Developer: He Lingfeng" FontSize="12"/>
+          <Label Content="Affiliation: IESSR, XJTU" FontSize="12"/>
+          <Label Content="GPL License " FontSize="12"/>
+        </StackPanel>
+      </Grid>
+    </Border>
+    
+    <Grid Grid.Row="1" Grid.Column="1" Margin="10" Background="#FFEAEAEA">
+      <Border BorderBrush="LightGray" BorderThickness="0.5"/>
+      <ScrollViewer VerticalScrollBarVisibility="Visible">
+        <WrapPanel HorizontalAlignment="Left">
+          <Border BorderBrush="LightGray" BorderThickness="0.5" Margin="10">
+            <StackPanel Background="White" Width="200" Height="250">
+              <Image Source="/Assets/label-stata.png" Height="80" Width="80" Margin="0 10 0 0"/>
+              <Label Content="Label Stata" HorizontalContentAlignment="Center" Margin="0 -5 0 0"/>
+              <TextPresenter Text="Input variables label table and value-labels table, then generate Stata code of the labelling operations." TextWrapping="Wrap" TextAlignment="Center" Margin="10 0"/>
+              <Button Content="Launch" Foreground="SkyBlue" Background="{x:Null}" BorderBrush="SkyBlue" Margin="0 20 0 0" HorizontalAlignment="Center" Click="LaunchStataLabel"/>
+            </StackPanel>
+          </Border>
+        </WrapPanel>
+      </ScrollViewer>
+    </Grid>
+    
+  </Grid>
+  
+</Window>

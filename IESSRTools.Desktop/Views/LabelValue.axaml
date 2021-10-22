@@ -1,0 +1,108 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:IESSRTools.Desktop.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="500"
+        x:Class="IESSRTools.Desktop.Views.LabelValue"
+        Title="Label Stata"
+        Icon="/Assets/avalonia-logo.ico"
+        Width="500" Height="500"
+        FontFamily="Centaur" FontSize="16">
+
+  <Design.DataContext>
+    <vm:LabelValueViewModel/>
+  </Design.DataContext>
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <Menu BorderThickness="0 0 0 1" BorderBrush="Gray">
+      <MenuItem Header="Files">
+        <MenuItem Header="Import" Click="ImportExcel"/>
+      </MenuItem>
+      <MenuItem Header="Generate">
+        <MenuItem Header="Stata Command" Click="GenerateCode"/>
+      </MenuItem>
+    </Menu>
+
+    <Grid Grid.Row="1" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+
+      <Label Content="Tables"/>
+      <Grid Grid.Row="1" Margin="0 5 0 5">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="10"/>
+          <ColumnDefinition Width="100"/>
+          <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Variable Table:" Grid.Column="1"/>
+        <Label Content="Label Table:" Grid.Row="1" Grid.Column="1"/>
+
+        <ComboBox x:Name="VariableTableSelector" Grid.Column="2" Width="200" SelectionChanged="SelectVariableTable"/>
+        <ComboBox x:Name="LabelTableSelector" Grid.Row="1" Grid.Column="2" Width="200" SelectionChanged="SelectLabelTable"/>
+      </Grid>
+      
+      
+      <Label Content="Variable Tables" Grid.Row="2"/>
+      <Grid Grid.Row="3" Margin="0 5 0 5">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="10"/>
+          <ColumnDefinition Width="100"/>
+          <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Name:" Grid.Column="1"/>
+        <Label Content="Label:" Grid.Row="1" Grid.Column="1"/>
+        <Label Content="Value Label:" Grid.Row="2" Grid.Column="1"/>
+
+        <ComboBox x:Name="VariableNameSelector" Grid.Column="2" Width="200"/>
+        <ComboBox x:Name="VariableLabelSelector" Grid.Row="1" Grid.Column="2" Width="200"/>
+        <ComboBox x:Name="VariableValueLabelSelector" Grid.Row="2" Grid.Column="2" Width="200"/>
+      </Grid>
+
+      <Label Content="Label Tables" Grid.Row="4"/>
+      <Grid Grid.Row="5" Margin="0 5 0 0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="10"/>
+          <ColumnDefinition Width="100"/>
+          <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <Label Content="Name:" Grid.Column="1"/>
+        <Label Content="Value:" Grid.Row="1" Grid.Column="1"/>
+        <Label Content="Label:" Grid.Row="2" Grid.Column="1"/>
+
+        <ComboBox x:Name="ValueLabelNameSelector" Grid.Column="2" Width="200"/>
+        <ComboBox x:Name="ValueSelector" Grid.Row="1" Grid.Column="2" Width="200"/>
+        <ComboBox x:Name="LabelSelector" Grid.Row="2" Grid.Column="2" Width="200"/>
+      </Grid>
+    </Grid>
+  </Grid>
+</Window>
