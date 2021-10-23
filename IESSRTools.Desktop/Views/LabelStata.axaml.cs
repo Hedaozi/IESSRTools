@@ -10,11 +10,11 @@ using IESSRTools.Core.Utils.IO;
 
 namespace IESSRTools.Desktop.Views
 {
-    public partial class LabelValue : Window
+    public partial class LabelStata : Window
     {
         private DataSet? excelData = null;
 
-        public LabelValue()
+        public LabelStata()
         {
             InitializeComponent();
 #if DEBUG
@@ -34,12 +34,20 @@ namespace IESSRTools.Desktop.Views
             string[] result = ofd.ShowAsync(parent: this).Result;
             if (result.Length == 1)
             {
-                excelData = Excel.ReadWorkbookAsDataSet(result[0]);
-                this.Find<ComboBox>("VariableTableSelector").SelectedIndex =
-                    this.Find<ComboBox>("LabelTableSelector").SelectedIndex = -1;
-                this.Find<ComboBox>("VariableTableSelector").Items =
-                    this.Find<ComboBox>("LabelTableSelector").Items =
-                    Data.GetTableNames(excelData);
+                try
+                {
+                    excelData = Excel.ReadWorkbookAsDataSet(result[0]);
+                    this.Find<ComboBox>("VariableTableSelector").SelectedIndex =
+                        this.Find<ComboBox>("LabelTableSelector").SelectedIndex = -1;
+                    this.Find<ComboBox>("VariableTableSelector").Items =
+                        this.Find<ComboBox>("LabelTableSelector").Items =
+                        Data.GetTableNames(excelData);
+                }
+                catch
+                {
+                    new MessageBox("File doesn't exist or are used by other process.")
+                        .ShowDialog(owner: this);
+                }
             }
         }
 
@@ -95,15 +103,17 @@ namespace IESSRTools.Desktop.Views
                 ValueSelector.SelectedItem == null ||
                 LabelSelector.SelectedItem == null)
             {
+                new MessageBox("Missing arguments!")
+                    .ShowDialog(owner: this);
                 return;
             }
-            string labelDefineCode = LabelStata.DefineValueLabels(
+            string labelDefineCode = Core.Program.LabelStata.DefineValueLabels(
                 excelData.Tables[(string)LabelTableSelector.SelectedItem],
                 (string)ValueLabelNameSelector.SelectedItem,
                 (string)ValueSelector.SelectedItem,
                 (string)LabelSelector.SelectedItem
             );
-            string combineCode = LabelStata.CombineVariablesAndLabels(
+            string combineCode = Core.Program.LabelStata.CombineVariablesAndLabels(
                 excelData.Tables[(string)VariableTableSelector.SelectedItem],
                 (string)VariableNameSelector.SelectedItem,
                 (string)VariableLabelSelector.SelectedItem,

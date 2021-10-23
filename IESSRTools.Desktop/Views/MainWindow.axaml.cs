@@ -7,6 +7,8 @@ namespace IESSRTools.Desktop.Views
 {
     public partial class MainWindow : Window
     {
+        public readonly string DocumentationUrl = "https://hedaozi.gitbook.io/iessr.tools.documentation/";
+
         public MainWindow()
         {
             InitializeComponent();
@@ -20,6 +22,8 @@ namespace IESSRTools.Desktop.Views
             AvaloniaXamlLoader.Load(this);
         }
 
-        public void LaunchStataLabel(object sender, RoutedEventArgs args) => new LabelValue().Show();
+        public void LaunchLabelStata(object sender, RoutedEventArgs args) => new LabelStata().Show();
+        public void LaunchFollowJournals(object sender, RoutedEventArgs args) => new FollowJournals().Show();
+        public void VisitDocumentation(object sender, RoutedEventArgs args) => Core.Utils.Net.VisitHtml(DocumentationUrl);
     }
 }

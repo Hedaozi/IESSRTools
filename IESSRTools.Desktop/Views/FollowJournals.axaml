@@ -1,0 +1,59 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="200"
+        x:Class="IESSRTools.Desktop.Views.FollowJournals"
+        Icon="/Assets/avalonia-logo.ico"
+        Width="500" Height="200"
+        MinWidth="500" MinHeight="200"
+        Title="Follow Journals"
+        FontFamily="/Assets/Fonts/Centaur.ttf#Centaur" FontSize="16">
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <Menu BorderThickness="0 0 0 1" BorderBrush="Gray">
+      <MenuItem Header="Search" Click="SearchForJournals"/>
+    </Menu>
+    
+    <Grid Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">
+
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+
+      <Label Content="Search Filter"/>
+      <Grid Grid.Row="1" Margin="0 5 0 5">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="20"/>
+          <ColumnDefinition Width="110"/>
+          <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Journal Name:" Grid.Column="1" Margin="0 3"/>
+        <Label Content="Search Provider:" Grid.Column="1" Grid.Row="1" Margin="0 13"/>
+
+        <TextBox x:Name="JournalName" Grid.Column="2" Width="200"/>
+        <StackPanel Grid.Row="1" Grid.Column="2" Margin="0 10" Orientation="Horizontal">
+          <RadioButton x:Name="PubMed" IsChecked="True" Margin="0 0 10 0">
+            <Image Source="/Assets/pubmed.png" Height="25"/>
+          </RadioButton>
+          <RadioButton>
+            <Image Source="/Assets/google-scholar.png" Height="25"/>
+          </RadioButton>
+        </StackPanel>
+      </Grid>
+    </Grid>
+  </Grid>
+</Window>

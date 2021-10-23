@@ -2,12 +2,34 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Version>0.0.2</Version>
+    <Authors>何凌锋</Authors>
+    <Company>IESSR, XJTU</Company>
+    <Copyright>何凌锋</Copyright>
+    <PackageLicenseFile>agpl-3.0.md</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/Hedaozi/IESSRTools</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Hedaozi/IESSRTools</RepositoryUrl>
+    <PackageIcon>avalonia-logo.ico</PackageIcon>
+    <PackageIconUrl />
+    <RepositoryType>Public</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="ExcelDataReader" Version="3.6.0" />
     <PackageReference Include="ExcelDataReader.DataSet" Version="3.6.0" />
     <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\IESSRTools.Desktop\Assets\avalonia-logo.ico">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\Publish\agpl-3.0.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

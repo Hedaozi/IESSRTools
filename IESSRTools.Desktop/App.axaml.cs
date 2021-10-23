@@ -1,7 +1,6 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using IESSRTools.Desktop.ViewModels;
 using IESSRTools.Desktop.Views;
 
 namespace IESSRTools.Desktop
@@ -17,10 +16,7 @@ namespace IESSRTools.Desktop
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                desktop.MainWindow = new MainWindow
-                {
-                    DataContext = new MainWindowViewModel(),
-                };
+                desktop.MainWindow = new MainWindow();
             }
 
             base.OnFrameworkInitializationCompleted();

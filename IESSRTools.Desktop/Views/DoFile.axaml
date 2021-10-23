@@ -7,7 +7,7 @@
         Title="Do File Viewer"
         Icon="/Assets/avalonia-logo.ico"
         Width="600" Height="600"
-        FontFamily="Centaur" FontSize="16">
+        FontFamily="/Assets/Fonts/Centaur.ttf#Centaur" FontSize="16">
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto"/>
