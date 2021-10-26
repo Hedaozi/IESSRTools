@@ -22,7 +22,7 @@
 
     <NSPrincipalClass>NSApplication</NSPrincipalClass>
     <NSHighResolutionCapable>true</NSHighResolutionCapable>
-    <Version>0.0.2</Version>
+    <Version>0.0.2.1</Version>
     <Company>IESSR, XJTU</Company>
     <Authors>何凌锋</Authors>
     <PackageLicenseFile>agpl-3.0.md</PackageLicenseFile>
@@ -32,14 +32,17 @@
     <RepositoryUrl>https://github.com/Hedaozi/IESSRTools</RepositoryUrl>
     <RepositoryType>Public</RepositoryType>
     <Copyright>何凌锋</Copyright>
-    <AssemblyVersion>0.0.2.0</AssemblyVersion>
-    <FileVersion>0.0.2.0</FileVersion>
+    <AssemblyVersion>0.0.2.1</AssemblyVersion>
+    <FileVersion>0.0.2.1</FileVersion>
 
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
+    <AvaloniaResource Remove="Assets\Demo\LabelStata.xlsx" />
+    <AvaloniaXaml Remove="Assets\Localizations\zh.axaml" />
     <None Remove=".gitignore" />
+    <None Remove="Assets\baidu-scholar.png" />
     <None Remove="Assets\follow-journals.png" />
     <None Remove="Assets\Fonts\Lato-Black.ttf" />
     <None Remove="Assets\Fonts\Lato-BlackItalic.ttf" />
@@ -63,6 +66,8 @@
     <None Remove="Assets\Fonts\Roboto-Regular.ttf" />
     <None Remove="Assets\Fonts\Roboto-Thin.ttf" />
     <None Remove="Assets\Fonts\Roboto-ThinItalic.ttf" />
+    <None Remove="Assets\logo.png" />
+    <None Remove="Assets\microsoft-bing.png" />
     <None Include="..\Publish\agpl-3.0.md">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
@@ -90,16 +95,16 @@
     <AvaloniaResource Update="Assets\avalonia-logo.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AvaloniaResource>
+    <AvaloniaResource Update="Assets\Localizations\zh.axaml">
+      <SubType>Designer</SubType>
+    </AvaloniaResource>
+    <None Update="Assets\Demo\LabelStata.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <AvaloniaResource Update="Assets\Fonts\Centaur.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AvaloniaResource>
     <AvaloniaResource Update="Assets\Fonts\CENTURY.TTF">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </AvaloniaResource>
-    <AvaloniaResource Update="Assets\icon-crimson.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </AvaloniaResource>
-    <AvaloniaResource Update="Assets\icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AvaloniaResource>
     <AvaloniaResource Update="Assets\iessr.jpg">

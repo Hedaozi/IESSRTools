@@ -1,0 +1,91 @@
+<Style xmlns="https://github.com/avaloniaui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <Style.Resources>
+    <FontFamily x:Key="TranslatableFont">/Assets/Fonts/Centaur.ttf#Centaur</FontFamily>
+
+    <!-- Navigator -->
+    <sys:String x:Key="Applications">Applications</sys:String>
+    <sys:String x:Key="Settings">Settings</sys:String>
+    <sys:String x:Key="Documentation">Documentation</sys:String>
+
+    <sys:String x:Key="Developer">Developer: He Lingfeng</sys:String>
+    <sys:String x:Key="Affiliation">Affiliation: IESSR, XJTU</sys:String>
+
+    <!--Applications-->
+    <!--Applications - Filter-->
+    <sys:String x:Key="ApplicationsTypeSelector">Applications Type: </sys:String>
+    <sys:String x:Key="All">All</sys:String>
+    <sys:String x:Key="Program">Program</sys:String>
+    <sys:String x:Key="Academic">Academic</sys:String>
+
+    <!--Applications - Entry-->
+    <sys:String x:Key="Launch">Launch</sys:String>
+
+    <sys:String x:Key="LabelStata">Label Stata</sys:String>
+    <sys:String x:Key="LabelStataDetails">Input variables label table and value-labels table, then generate Stata code of the labelling operations.</sys:String>
+
+    <sys:String x:Key="FollowJournals">Follow Journals</sys:String>
+    <sys:String x:Key="FollowJournalsDetails">Input journal's name and choose a channel, then jump to the query result of newest articles!</sys:String>
+
+
+    <!--Settings-->
+    <!--Settings - Filter-->
+    <sys:String x:Key="SettingsOnSelector">Settings On: </sys:String>
+    <sys:String x:Key="Appearance">Appearance</sys:String>
+
+
+    <!--Documentation-->
+    <!--Documentation - Selector-->
+    <sys:String x:Key="LanguageSelector">Language: </sys:String>
+    <sys:String x:Key="English">English</sys:String>
+    <sys:String x:Key="Chinese">Chinese</sys:String>
+    <sys:String x:Key="View">View</sys:String>
+
+    <!--Documentation - Intro-->
+    <sys:String x:Key="DocIntro0">There are 3 parts in the documentation.</sys:String>
+    <sys:String x:Key="DocIntro1">1. The newest version of the tools.</sys:String>
+    <sys:String x:Key="DocIntro2">2. The guides about how to use.</sys:String>
+    <sys:String x:Key="DocIntro3">3. Some extras.</sys:String>
+
+
+
+    <!--Each Applications-->
+
+    <!--Label Stata-->
+    <!--Label Stata - Main - Menu-->
+    <sys:String x:Key="Files">Files</sys:String>
+    <sys:String x:Key="Import">Import</sys:String>
+    <sys:String x:Key="UseDemo">Use Demo</sys:String>
+    <sys:String x:Key="UseDemoToolTip">CGSS Demo.</sys:String>
+    <sys:String x:Key="Generate">Generate</sys:String>
+    <sys:String x:Key="StataCommand">Stata Command</sys:String>
+    <sys:String x:Key="Help">Help</sys:String>
+
+    <!--Label Stata - Main - Config-->
+    <sys:String x:Key="Tables">Tables</sys:String>
+    <sys:String x:Key="VariableTableSelector">Variable Table:</sys:String>
+    <sys:String x:Key="LabelTableSelector">Label Table:</sys:String>
+    <sys:String x:Key="VariableTable">Variable Table</sys:String>
+    <sys:String x:Key="NameSelector">Name:</sys:String>
+    <sys:String x:Key="LabelSelector">Label:</sys:String>
+    <sys:String x:Key="ValueLabelSelector">Value Label:</sys:String>
+    <sys:String x:Key="LabelTable">Label Table</sys:String>
+    <sys:String x:Key="ValueSelector">Value:</sys:String>
+
+    <!--Label Stata - DoFile-->
+    <sys:String x:Key="DoFileViewer">Do File Viewer</sys:String>
+    <sys:String x:Key="SaveAs">SaveAs</sys:String>
+
+
+    <!--Follow Journal-->
+    <!--Follow Journal - Main - Menu-->
+    <sys:String x:Key="Search">Search</sys:String>
+
+    <!--Follow Journal - Main - Config-->
+    <sys:String x:Key="SearchFilter">Search Filter</sys:String>
+    <sys:String x:Key="JournalNameInput">Journal Name:</sys:String>
+    <sys:String x:Key="SearchProviderSelector">Search Provider:</sys:String>
+  </Style.Resources>
+  
+</Style>

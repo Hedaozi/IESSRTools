@@ -4,18 +4,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="using:IESSRTools.Desktop.Views"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        MinWidth="400" MinHeight="400"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="500"
+        MinWidth="500" MinHeight="400"
         x:Class="IESSRTools.Desktop.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="IESSR Tools Desktop"
-        FontFamily="/Assets/Fonts/Centaur.ttf#Centaur" FontSize="16">
+        Title="IESSR Tools Desktop" WindowState="Maximized"
+        FontFamily="{DynamicResource TranslatableFont}" FontSize="16">
+
+  <Window.DataContext>
+    <vm:MainWindowViewModel/>
+  </Window.DataContext>
 
   <Window.Styles>
     <StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/RadioButton.xaml"/>
     <StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/Button.xaml"/> 
     
-    <Style Selector="RadioButton.Navigator">
+    <Style Selector="RadioButton.NavRatio">
       <Setter Property="Foreground" Value="Black"/>
       <Setter Property="Background" Value="Transparent"/>
       <Setter Property="Margin" Value="0 2 0 0"/>
@@ -28,7 +32,7 @@
           <ControlTemplate TargetType="{x:Type RadioButton}">
             <Grid x:Name="templateRoot" Background="{TemplateBinding Background}" Width="{TemplateBinding Width}">
               <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}"
-                                Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 20"
+                                HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 20"
                                 Focusable="False" RecognizesAccessKey="True"/>
             </Grid>
           </ControlTemplate>
@@ -36,38 +40,52 @@
       </Setter>
     </Style>
     
-    <Style Selector="RadioButton.Navigator:pointerover">
+    <Style Selector="RadioButton.NavRatio:pointerover">
       <Setter Property="Background" Value="#FFEEEEEE"/>
     </Style>
 
-    <Style Selector="RadioButton.Navigator:checked">
+    <Style Selector="RadioButton.NavRatio:checked">
       <Setter Property="Foreground" Value="#FF00B050"/>
-      <Setter Property="FontWeight" Value="Bold"/>
       <Setter Property="Background" Value="#FFF8F8F8"/>
     </Style>
 
+    <Style Selector="RadioButton.NavRatio:pressed">
+      <Setter Property="Foreground" Value="#FF00B050"/>
+      <Setter Property="Background" Value="#FFF8F8F8"/>
+    </Style>
 
-    <Style Selector="Button.NavigatorButton">
-      <Setter Property="BorderBrush" Value="Gray"/>
-      <Setter Property="Background" Value="White"/>
+    <Style Selector="Button.NavBtn">
+      <Setter Property="Foreground" Value="Black"/>
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="Margin" Value="0 2 0 0"/>
       <Setter Property="VerticalContentAlignment" Value="Center"/>
-      <Setter Property="HorizontalContentAlignment" Value="Center"/>
+      <Setter Property="HorizontalContentAlignment" Value="Left"/>
+      <Setter Property="BorderBrush" Value="Transparent"/>
+      <Setter Property="BorderThickness" Value="0"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type Button}">
+            <Grid x:Name="templateRoot" Background="{TemplateBinding Background}" Width="{TemplateBinding Width}">
+              <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}"
+                                Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 20"
+                                Focusable="False" RecognizesAccessKey="True"/>
+            </Grid>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
     </Style>
 
-    <Style Selector="Button.NavigatorButton:focus">
-      <Setter Property="Foreground" Value="#FF00B050"/>
-      <Setter Property="Background" Value="White"/>
+    <Style Selector="Button.NavBtn:pointerover">
+      <Setter Property="Background" Value="#FFEEEEEE"/>
     </Style>
 
-    <Style Selector="Button.NavigatorButton:pressed">
+    <Style Selector="Button.NavBtn:pressed">
       <Setter Property="Foreground" Value="#FF00B050"/>
-      <Setter Property="Background" Value="White"/>
+      <Setter Property="Background" Value="#FFF8F8F8"/>
     </Style>
     
   </Window.Styles>
   
-  
-
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="50"/>
@@ -79,20 +97,27 @@
     </Grid.ColumnDefinitions>
 
     <Grid Margin="0 5 0 0" Grid.ColumnSpan="2">
-      <Image Source="/Assets/icon.png" Stretch="Uniform" HorizontalAlignment="Left"/>
+      <Image Source="/Assets/logo.png" Stretch="Uniform" HorizontalAlignment="Left"/>
+      <Grid HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20 0">
+        <ComboBox x:Name="LangSelector" SelectedIndex="0" VerticalAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="ChangeLanguage">
+          <ComboBoxItem Content="{DynamicResource English}"/>
+          <ComboBoxItem Content="{DynamicResource Chinese}"/>
+        </ComboBox>
+      </Grid>
       <Border BorderBrush="LightGray" BorderThickness="0 0 0 0.5"/>
     </Grid>
 
+    <!--Navigator-->
     <Border Grid.Row="1" Background="#FFEAEAEA" BorderBrush="LightGray" BorderThickness="0 0 0.5 0">
       <Grid>
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
-          <RadioButton x:Name="ProgramSwitch" Content="Program" IsChecked="True" Width="150" Classes="Navigator"/>
-          <RadioButton x:Name="AcademicSwitch" Content="Academic" IsChecked="False" Width="150" Classes="Navigator"/>
+          <RadioButton x:Name="ApplicationsSwitch" Content="{DynamicResource Applications}" IsChecked="True" Width="150" Classes="NavRatio"/>
+          <RadioButton x:Name="SettingsSwitch" Content="{DynamicResource Settings}" IsChecked="False" Width="150" Classes="NavRatio" IsVisible="False"/>
+          <Button x:Name="DocumentationSwitch" Content="{DynamicResource Documentation}" Width="150" Classes="NavBtn" Click="VisitDocumentation"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10">
-          <Button Content="Documentation" Margin="0 10" Width="130" Height="50" Classes="NavigatorButton" Click="VisitDocumentation"/>
-          <Label Content="Developer: He Lingfeng" FontSize="12"/>
-          <Label Content="Affiliation: IESSR, XJTU" FontSize="12"/>
+          <Label Content="{DynamicResource Developer}" FontSize="12"/>
+          <Label Content="{DynamicResource Affiliation}" FontSize="12"/>
           <Label Content="AGPL-3.0 License" FontSize="12"/>
         </StackPanel>
       </Grid>
@@ -100,34 +125,106 @@
     
     <Grid Grid.Row="1" Grid.Column="1" Margin="10" Background="#FFEAEAEA">
       <Border BorderBrush="LightGray" BorderThickness="0.5"/>
-      <ScrollViewer IsVisible="{Binding ElementName=ProgramSwitch,Path=IsChecked}" VerticalScrollBarVisibility="Visible">
-        <WrapPanel HorizontalAlignment="Left">
-          <Border BorderBrush="LightGray" BorderThickness="0.5" Margin="10" Width="200" Height="250" Background="White">
-            <Grid>
-              <StackPanel VerticalAlignment="Top">
-                <Image Source="/Assets/label-stata.png" Height="80" Width="80" Margin="0 10 0 0"/>
-                <Label Content="Label Stata" HorizontalContentAlignment="Center" Margin="0 -5 0 0"/>
-                <TextPresenter Text="Input variables label table and value-labels table, then generate Stata code of the labelling operations." TextWrapping="Wrap" TextAlignment="Center" Margin="10 0"/>
-              </StackPanel>
-              <Button Content="Launch" Foreground="SkyBlue" Background="{x:Null}" BorderBrush="SkyBlue" Margin="0 20" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="LaunchLabelStata"/>
-            </Grid>
-          </Border>
-        </WrapPanel>
-      </ScrollViewer>
-      <ScrollViewer IsVisible="{Binding ElementName=AcademicSwitch,Path=IsChecked}" VerticalScrollBarVisibility="Visible">
-        <WrapPanel HorizontalAlignment="Left">
-          <Border BorderBrush="LightGray" BorderThickness="0.5" Margin="10" Width="200" Height="250" Background="White">
-            <Grid>
-              <StackPanel VerticalAlignment="Top">
-                <Image Source="/Assets/follow-journals.png" Height="80" Width="80" Margin="15 10 0 0"/>
-                <Label Content="Follow Journals" HorizontalContentAlignment="Center" Margin="0 -5 0 0"/>
-                <TextPresenter Text="Input journal's name and choose a channel, then jump to the query result of newest articles!" TextWrapping="Wrap" TextAlignment="Center" Margin="10 0"/>
-              </StackPanel>
-              <Button Content="Launch" Foreground="SkyBlue" Background="{x:Null}" BorderBrush="SkyBlue" Margin="0 20" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="LaunchFollowJournals"/>
-            </Grid>
-          </Border>
-        </WrapPanel>
-      </ScrollViewer>
+      
+      <!--Applications-->
+      <Grid IsVisible="{Binding ElementName=ApplicationsSwitch,Path=IsChecked}">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Border BorderBrush="LightGray" Background="White" BorderThickness="0.5">
+          <StackPanel Orientation="Horizontal">
+            <Label Content="{DynamicResource ApplicationsTypeSelector} " Margin="10 10 0 10" VerticalAlignment="Center" Width="120"/>
+            <ComboBox SelectedIndex="0" Margin="0 10" VerticalAlignment="Center" Width="150" VerticalContentAlignment="Center" SelectionChanged="SelectAppsFilter">
+              <ComboBoxItem x:Name="ApplicationsAll" Content="{DynamicResource All}"/>
+              <ComboBoxItem x:Name="ApplicationsProgram" Content="{DynamicResource Program}"/>
+              <ComboBoxItem x:Name="ApplicationsAcademic" Content="{DynamicResource Academic}"/>
+            </ComboBox>
+          </StackPanel>
+        </Border>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1">
+          <WrapPanel HorizontalAlignment="Left">
+
+            <Border BorderBrush="LightGray" BorderThickness="0.5" Margin="10" Width="200" Height="250" Background="White" IsVisible="{Binding ShowProgram}">
+              <Grid>
+                <StackPanel VerticalAlignment="Top">
+                  <Image Source="/Assets/label-stata.png" Height="80" Width="80" Margin="0 10 0 0"/>
+                  <Label Content="{DynamicResource LabelStata}" HorizontalContentAlignment="Center" Margin="0 -5 0 0"/>
+                  <TextPresenter Text="{DynamicResource LabelStataDetails}" TextWrapping="Wrap" TextAlignment="Center" Margin="10 5"/>
+                </StackPanel>
+                <Button Content="{DynamicResource Launch}" Foreground="SkyBlue" Background="{x:Null}" BorderBrush="SkyBlue" Margin="0 20" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="LaunchLabelStata"/>
+              </Grid>
+            </Border>
+
+            <Border BorderBrush="LightGray" BorderThickness="0.5" Margin="10" Width="200" Height="250" Background="White" IsVisible="{Binding ShowAcademic}">
+              <Grid>
+                <StackPanel VerticalAlignment="Top">
+                  <Image Source="/Assets/follow-journals.png" Height="80" Width="80" Margin="15 10 0 0"/>
+                  <Label Content="{DynamicResource FollowJournals}" HorizontalContentAlignment="Center" Margin="0 -5 0 0"/>
+                  <TextPresenter Text="{DynamicResource FollowJournalsDetails}" TextWrapping="Wrap" TextAlignment="Center" Margin="10 5"/>
+                </StackPanel>
+                <Button Content="{DynamicResource Launch}" Foreground="SkyBlue" Background="{x:Null}" BorderBrush="SkyBlue" Margin="0 20" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="LaunchFollowJournals"/>
+              </Grid>
+            </Border>
+
+          </WrapPanel>
+        </ScrollViewer>
+      </Grid>
+
+      <!--Settings-->
+      <Grid IsVisible="{Binding ElementName=SettingsSwitch,Path=IsChecked}">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border BorderBrush="LightGray" Background="White" BorderThickness="0.5">
+          <StackPanel Orientation="Horizontal">
+            <Label Content="{DynamicResource SettingsOnSelector}" Margin="10 10 0 10" VerticalAlignment="Center" Width="120"/>
+            <ComboBox SelectedIndex="0" Margin="0 10" VerticalAlignment="Center" Width="150" VerticalContentAlignment="Center">
+              <ComboBoxItem x:Name="SettingsAll" Content="{DynamicResource All}"/>
+              <ComboBoxItem x:Name="SettingsAppearance" Content="{DynamicResource Appearance}"/>
+            </ComboBox>
+          </StackPanel>
+        </Border>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1">
+          <Grid HorizontalAlignment="Left">
+            
+          </Grid>
+        </ScrollViewer>
+      </Grid>
+
+      <!--Documentation-->
+      <!--<Grid IsVisible="{Binding ElementName=DocumentationSwitch,Path=IsChecked}">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Border BorderBrush="LightGray" BorderThickness="0.5" Background="White">
+          <StackPanel Orientation="Horizontal">
+            <Label Content="{DynamicResource LanguageSelector} " Margin="10 10 0 10" VerticalAlignment="Center" Width="120"/>
+            <ComboBox SelectedIndex="0" Margin="0 10" VerticalAlignment="Center" Width="150" VerticalContentAlignment="Center">
+              <ComboBoxItem x:Name="SettingsEnglish" Content="{DynamicResource English}" IsSelected="True"/>
+              <ComboBoxItem x:Name="SettingsChinese" Content="{DynamicResource Chinese}"/>
+            </ComboBox>
+            <Button Content="{DynamicResource View}" Margin="10 0" Background="White" BorderBrush="Gray" BorderThickness="0.5" Click="VisitDocumentation"/>
+          </StackPanel>
+        </Border>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1">
+          <StackPanel HorizontalAlignment="Left" Margin="10">
+            <TextPresenter Text="{DynamicResource DocIntro0}" Margin="0 2"/>
+            <TextPresenter Text="{DynamicResource DocIntro1}" Margin="0 2"/>
+            <TextPresenter Text="{DynamicResource DocIntro2}" Margin="0 2"/>
+            <TextPresenter Text="{DynamicResource DocIntro3}" Margin="0 2"/>
+          </StackPanel>
+        </ScrollViewer>
+      </Grid>-->
+      
     </Grid>
     
   </Grid>

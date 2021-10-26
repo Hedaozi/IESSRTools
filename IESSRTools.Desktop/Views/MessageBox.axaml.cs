@@ -10,9 +10,9 @@ namespace IESSRTools.Desktop.Views
         public MessageBox()
         {
             InitializeComponent();
-#if DEBUG
+# if DEBUG
             this.AttachDevTools();
-#endif
+# endif
         }
 
         public MessageBox(string message)

@@ -1,0 +1,93 @@
+<Style xmlns="https://github.com/avaloniaui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <Style.Resources>
+    <FontFamily x:Key="TranslatableFont">宋体,Simsun,微软雅黑,Microsoft YaHei,苹方-简,宋体-简</FontFamily>
+
+    <!-- Navigator -->
+    <sys:String x:Key="Applications">应用</sys:String>
+    <sys:String x:Key="Settings">设置</sys:String>
+    <sys:String x:Key="Documentation">文档</sys:String>
+
+    <sys:String x:Key="Developer">开发者：何凌锋</sys:String>
+    <sys:String x:Key="Affiliation">西安交通大学
+实证社会科学研究所
+    </sys:String>
+
+    <!--Applications-->
+    <!--Applications - Filter-->
+    <sys:String x:Key="ApplicationsTypeSelector">应用类型：</sys:String>
+    <sys:String x:Key="All">所有</sys:String>
+    <sys:String x:Key="Program">程序</sys:String>
+    <sys:String x:Key="Academic">学术</sys:String>
+
+    <!--Applications - Entry-->
+    <sys:String x:Key="Launch">启动</sys:String>
+
+    <sys:String x:Key="LabelStata">Stata标签</sys:String>
+    <sys:String x:Key="LabelStataDetails">输入变量标签表和值标签表，然后生成标签操作的Stata代码。</sys:String>
+
+    <sys:String x:Key="FollowJournals">追踪期刊</sys:String>
+    <sys:String x:Key="FollowJournalsDetails">输入期刊名称，然后跳转到最新文章的查询结果！</sys:String>
+
+
+    <!--Settings-->
+    <!--Settings - Filter-->
+    <sys:String x:Key="SettingsOnSelector">设置</sys:String>
+    <sys:String x:Key="Appearance">外观</sys:String>
+
+
+    <!--Documentation-->
+    <!--Documentation - Selector-->
+    <sys:String x:Key="LanguageSelector">语言：</sys:String>
+    <sys:String x:Key="English">英文</sys:String>
+    <sys:String x:Key="Chinese">中文</sys:String>
+    <sys:String x:Key="View">查看</sys:String>
+
+    <!--Documentation - Intro-->
+    <sys:String x:Key="DocIntro0">文档包含三个方面的内容：</sys:String>
+    <sys:String x:Key="DocIntro1">1. 工具的最新版本。</sys:String>
+    <sys:String x:Key="DocIntro2">2. 使用指南。</sys:String>
+    <sys:String x:Key="DocIntro3">3. 一些额外内容。</sys:String>
+
+
+
+    <!--Each Applications-->
+
+    <!--Label Stata-->
+    <!--Label Stata - Main - Menu-->
+    <sys:String x:Key="Files">文件</sys:String>
+    <sys:String x:Key="Import">导入</sys:String>
+    <sys:String x:Key="UseDemo">使用样例</sys:String>
+    <sys:String x:Key="UseDemoToolTip">以CGSS为例。</sys:String>
+    <sys:String x:Key="Generate">生成</sys:String>
+    <sys:String x:Key="StataCommand">Stata命令</sys:String>
+    <sys:String x:Key="Help">帮助</sys:String>
+
+    <!--Label Stata - Main - Config-->
+    <sys:String x:Key="Tables">表格</sys:String>
+    <sys:String x:Key="VariableTableSelector">变量表：</sys:String>
+    <sys:String x:Key="LabelTableSelector">标签表：</sys:String>
+    <sys:String x:Key="VariableTable">变量表</sys:String>
+    <sys:String x:Key="NameSelector">名  称：</sys:String>
+    <sys:String x:Key="LabelSelector">标  签：</sys:String>
+    <sys:String x:Key="ValueLabelSelector">值标签：</sys:String>
+    <sys:String x:Key="LabelTable">标签表</sys:String>
+    <sys:String x:Key="ValueSelector">取  值：</sys:String>
+
+    <!--Label Stata - DoFile-->
+    <sys:String x:Key="DoFileViewer">Do文件查看器</sys:String>
+    <sys:String x:Key="SaveAs">另存为</sys:String>
+
+
+    <!--Follow Journal-->
+    <!--Follow Journal - Main - Menu-->
+    <sys:String x:Key="Search">检索</sys:String>
+
+    <!--Follow Journal - Main - Config-->
+    <sys:String x:Key="SearchFilter">检索条件</sys:String>
+    <sys:String x:Key="JournalNameInput">期刊名称：</sys:String>
+    <sys:String x:Key="SearchProviderSelector">检索引擎：</sys:String>
+  </Style.Resources>
+  
+</Style>

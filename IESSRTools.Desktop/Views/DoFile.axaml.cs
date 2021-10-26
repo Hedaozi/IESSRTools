@@ -12,17 +12,17 @@ namespace IESSRTools.Desktop.Views
         public DoFile()
         {
             InitializeComponent();
-#if DEBUG
+# if DEBUG
             this.AttachDevTools();
-#endif
+# endif
         }
 
         public DoFile(string code)
         {
             InitializeComponent();
-#if DEBUG
+# if DEBUG
             this.AttachDevTools();
-#endif
+# endif
             this.Find<TextBox>("viewer").Text = code;
         }
 
@@ -39,7 +39,7 @@ namespace IESSRTools.Desktop.Views
             sfd.Filters.Add(new FileDialogFilter() { Name = "Stata Do Files", Extensions = { "do" } });
             sfd.ShowAsync(parent: this).ContinueWith((Task<string> t) =>
             {
-                if (t.IsCompleted)
+                if (t.IsCompleted && t.Result != null)
                 {
                     File.WriteAllText(t.Result, code);
                 }

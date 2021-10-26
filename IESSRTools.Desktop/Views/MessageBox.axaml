@@ -6,7 +6,7 @@
         x:Class="IESSRTools.Desktop.Views.MessageBox"
         Icon="/Assets/avalonia-logo.ico"
         Title="Message Box"
-        Height="150" Width="300" CanResize="False"
-        FontFamily="/Assets/Fonts/Centaur.ttf#Centaur" FontSize="16">
+        Height="150" Width="300" CanResize="False" WindowStartupLocation="CenterOwner"
+        FontFamily="{DynamicResource TranslatableFont}" FontSize="16">
   <TextPresenter x:Name="message" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 </Window>

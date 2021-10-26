@@ -2,9 +2,10 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using System;
+using System.IO;
 using System.Data;
 using System.Collections.Generic;
-using IESSRTools.Core.Program;
 using IESSRTools.Core.Utils;
 using IESSRTools.Core.Utils.IO;
 
@@ -12,12 +13,17 @@ namespace IESSRTools.Desktop.Views
 {
     public partial class LabelStata : Window
     {
+        public readonly string HelpUrl_en = "https://hedaozi.gitbook.io/iessrtools.doc.en-us/guides/program-tools/label-stata";
+        public readonly string HelpUrl_zh = "https://hedaozi.gitbook.io/iessrtools.doc.zh-cn/guides/program-tools/label-stata";
+
+        public readonly string DemoPath = "Assets/Demo/LabelStata.xlsx";
+
         private DataSet? excelData = null;
 
         public LabelStata()
         {
             InitializeComponent();
-#if DEBUG
+# if DEBUG
             this.AttachDevTools();
 #endif
         }
@@ -45,9 +51,39 @@ namespace IESSRTools.Desktop.Views
                 }
                 catch
                 {
-                    new MessageBox("File doesn't exist or are used by other process.")
+                    new MessageBox("File doesn't exist or is used by other process.")
                         .ShowDialog(owner: this);
                 }
+            }
+        }
+
+        public void ImportDemo(object sender, RoutedEventArgs args)
+        {
+            try
+            {
+                string demoFullPath = Path.Combine(Environment.CurrentDirectory, DemoPath);
+                excelData = Excel.ReadWorkbookAsDataSet(demoFullPath);
+                this.Find<ComboBox>("VariableTableSelector").SelectedIndex =
+                    this.Find<ComboBox>("LabelTableSelector").SelectedIndex = -1;
+                this.Find<ComboBox>("VariableTableSelector").Items =
+                    this.Find<ComboBox>("LabelTableSelector").Items =
+                    Data.GetTableNames(excelData);
+
+                this.Find<ComboBox>("VariableTableSelector").SelectedIndex = 0;
+                this.Find<ComboBox>("LabelTableSelector").SelectedIndex = 1;
+                this.Find<ComboBox>("VariableNameSelector").SelectedIndex = 0;
+                this.Find<ComboBox>("VariableLabelSelector").SelectedIndex = 1;
+                this.Find<ComboBox>("VariableValueLabelSelector").SelectedIndex = 2;
+                this.Find<ComboBox>("ValueLabelNameSelector").SelectedIndex = 0;
+                this.Find<ComboBox>("ValueSelector").SelectedIndex = 1;
+                this.Find<ComboBox>("LabelSelector").SelectedIndex = 2;
+
+                Net.VisitHtml(demoFullPath);
+            }
+            catch
+            {
+                new MessageBox("File is used by other process.")
+                    .ShowDialog(owner: this);
             }
         }
 
@@ -121,5 +157,7 @@ namespace IESSRTools.Desktop.Views
             );
             new DoFile(labelDefineCode + "\n" + combineCode).Show();
         }
+
+        public void VisitHelp(object sender, RoutedEventArgs args) => Net.VisitHtml((Application.Current as App).LangID == 0 ? HelpUrl_en : HelpUrl_zh);
     }
 }

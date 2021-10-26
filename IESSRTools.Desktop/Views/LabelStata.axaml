@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="500"
         x:Class="IESSRTools.Desktop.Views.LabelStata"
-        Title="Label Stata"
+        Title="{DynamicResource LabelStata}"
         Icon="/Assets/avalonia-logo.ico"
         Width="500" Height="500"
         MinWidth="350" MinHeight="400"
-        FontFamily="/Assets/Fonts/Centaur.ttf#Centaur" FontSize="16">
+        FontFamily="{DynamicResource TranslatableFont}" FontSize="16">
 
   <Grid>
     <Grid.RowDefinitions>
@@ -18,12 +18,14 @@
     </Grid.RowDefinitions>
 
     <Menu BorderThickness="0 0 0 1" BorderBrush="Gray">
-      <MenuItem Header="Files">
-        <MenuItem Header="Import" Click="ImportExcel"/>
+      <MenuItem Header="{DynamicResource Files}">
+        <MenuItem Header="{DynamicResource Import}" Click="ImportExcel"/>
+        <MenuItem Header="{DynamicResource UseDemo}" ToolTip.Tip="{DynamicResource UseDemoToolTip.Tip}" Click="ImportDemo"/>
       </MenuItem>
-      <MenuItem Header="Generate">
-        <MenuItem Header="Stata Command" Click="GenerateCode"/>
+      <MenuItem Header="{DynamicResource Generate}">
+        <MenuItem Header="{DynamicResource StataCommand}" Click="GenerateCode"/>
       </MenuItem>
+      <MenuItem Header="{DynamicResource Help}" Click="VisitHelp"/>
     </Menu>
 
     <Grid Grid.Row="1" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -36,7 +38,7 @@
         <RowDefinition Height="Auto"/>
       </Grid.RowDefinitions>
 
-      <Label Content="Tables"/>
+      <Label Content="{DynamicResource Tables}"/>
       <Grid Grid.Row="1" Margin="0 5 0 5">
         <Grid.ColumnDefinitions>
           <ColumnDefinition Width="10"/>
@@ -49,15 +51,15 @@
           <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Variable Table:" Grid.Column="1"/>
-        <Label Content="Label Table:" Grid.Row="1" Grid.Column="1"/>
+        <Label Content="{DynamicResource VariableTableSelector}" Grid.Column="1"/>
+        <Label Content="{DynamicResource LabelTableSelector}" Grid.Row="1" Grid.Column="1"/>
 
-        <ComboBox x:Name="VariableTableSelector" Grid.Column="2" Width="200" SelectionChanged="SelectVariableTable"/>
-        <ComboBox x:Name="LabelTableSelector" Grid.Row="1" Grid.Column="2" Width="200" SelectionChanged="SelectLabelTable"/>
+        <ComboBox x:Name="VariableTableSelector" FontFamily="{DynamicResource UntranslatableFont}" Grid.Column="2" Width="200" SelectionChanged="SelectVariableTable"/>
+        <ComboBox x:Name="LabelTableSelector" FontFamily="{DynamicResource UntranslatableFont}" Grid.Row="1" Grid.Column="2" Width="200" SelectionChanged="SelectLabelTable"/>
       </Grid>
       
       
-      <Label Content="Variable Tables" Grid.Row="2"/>
+      <Label Content="{DynamicResource VariableTable}" Grid.Row="2"/>
       <Grid Grid.Row="3" Margin="0 5 0 5">
         <Grid.ColumnDefinitions>
           <ColumnDefinition Width="10"/>
@@ -70,16 +72,16 @@
           <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Name:" Grid.Column="1"/>
-        <Label Content="Label:" Grid.Row="1" Grid.Column="1"/>
-        <Label Content="Value Label:" Grid.Row="2" Grid.Column="1"/>
+        <Label Content="{DynamicResource NameSelector}" Grid.Column="1"/>
+        <Label Content="{DynamicResource LabelSelector}" Grid.Row="1" Grid.Column="1"/>
+        <Label Content="{DynamicResource ValueLabelSelector}" Grid.Row="2" Grid.Column="1"/>
 
-        <ComboBox x:Name="VariableNameSelector" Grid.Column="2" Width="200"/>
-        <ComboBox x:Name="VariableLabelSelector" Grid.Row="1" Grid.Column="2" Width="200"/>
-        <ComboBox x:Name="VariableValueLabelSelector" Grid.Row="2" Grid.Column="2" Width="200"/>
+        <ComboBox x:Name="VariableNameSelector" FontFamily="{DynamicResource UntranslatableFont}" Grid.Column="2" Width="200"/>
+        <ComboBox x:Name="VariableLabelSelector" FontFamily="{DynamicResource UntranslatableFont}" Grid.Row="1" Grid.Column="2" Width="200"/>
+        <ComboBox x:Name="VariableValueLabelSelector" FontFamily="{DynamicResource UntranslatableFont}" Grid.Row="2" Grid.Column="2" Width="200"/>
       </Grid>
 
-      <Label Content="Label Tables" Grid.Row="4"/>
+      <Label Content="{DynamicResource LabelTable}" Grid.Row="4"/>
       <Grid Grid.Row="5" Margin="0 5 0 0">
         <Grid.ColumnDefinitions>
           <ColumnDefinition Width="10"/>
@@ -92,13 +94,13 @@
           <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         
-        <Label Content="Name:" Grid.Column="1"/>
-        <Label Content="Value:" Grid.Row="1" Grid.Column="1"/>
-        <Label Content="Label:" Grid.Row="2" Grid.Column="1"/>
+        <Label Content="{DynamicResource NameSelector}" Grid.Column="1"/>
+        <Label Content="{DynamicResource ValueSelector}" Grid.Row="1" Grid.Column="1"/>
+        <Label Content="{DynamicResource LabelSelector}" Grid.Row="2" Grid.Column="1"/>
 
-        <ComboBox x:Name="ValueLabelNameSelector" Grid.Column="2" Width="200"/>
-        <ComboBox x:Name="ValueSelector" Grid.Row="1" Grid.Column="2" Width="200"/>
-        <ComboBox x:Name="LabelSelector" Grid.Row="2" Grid.Column="2" Width="200"/>
+        <ComboBox x:Name="ValueLabelNameSelector" FontFamily="{DynamicResource UntranslatableFont}" Grid.Column="2" Width="200"/>
+        <ComboBox x:Name="ValueSelector" FontFamily="{DynamicResource UntranslatableFont}" Grid.Row="1" Grid.Column="2" Width="200"/>
+        <ComboBox x:Name="LabelSelector" FontFamily="{DynamicResource UntranslatableFont}" Grid.Row="2" Grid.Column="2" Width="200"/>
       </Grid>
     </Grid>
   </Grid>
