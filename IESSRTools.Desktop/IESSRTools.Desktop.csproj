@@ -37,7 +37,6 @@
 
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
     <AvaloniaResource Remove="Assets\Demo\LabelStata.xlsx" />
     <AvaloniaXaml Remove="Assets\Localizations\zh.axaml" />
@@ -87,6 +86,7 @@
     <PackageReference Include="Dotnet.Bundle" Version="0.9.13" />
     <PackageReference Include="System.Resources.Extensions" Version="5.0.0" />
     <PackageReference Include="System.Runtime.InteropServices" Version="4.3.0" />
+    <PackageReference Include="YamlDotNet" Version="11.2.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IESSRTools.Core\IESSRTools.Core.csproj" />
@@ -132,5 +132,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
 </Project>

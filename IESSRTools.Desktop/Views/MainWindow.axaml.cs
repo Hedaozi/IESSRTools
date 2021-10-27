@@ -7,8 +7,8 @@ namespace IESSRTools.Desktop.Views
 {
     public partial class MainWindow : Window
     {
-        public readonly string DocumentationUrl_en = "https://hedaozi.gitbook.io/iessrtools.doc.en-us/";
-        public readonly string DocumentationUrl_zh = "https://hedaozi.gitbook.io/iessrtools.doc.zh-cn/";
+        public readonly string DocumentationUrl_en = "https://hedaozi.gitbook.io/iessrtools.doc.en/";
+        public readonly string DocumentationUrl_zh = "https://hedaozi.gitbook.io/iessrtools.doc.zh/";
 
         public MainWindow()
         {
