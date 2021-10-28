@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="IESSRTools.AddIn.Excel.Pane.ExtractLinks"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IESSRTools.AddIn.Excel.Pane"
+             mc:Ignorable="d" 
+             FontFamily="宋体" FontSize="14"
+             d:DesignHeight="800" d:DesignWidth="400">
+    <ScrollViewer Background="#FFE6E6E6">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Expander Header="提取选项" IsExpanded="True" Grid.Row="0" Margin="10 10 0 0">
+                <Grid Margin="10 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Content="提取模式"/>
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" VerticalAlignment="Center">
+                        <RadioButton x:Name="OnlyTarger" Content="提取指向" IsChecked="True" GroupName="ExtractMode"/>
+                        <RadioButton x:Name="AlsoDetails" Content="提取指向及详情" GroupName="ExtractMode" Grid.Column="1"/>
+                    </StackPanel>
+
+                    <Label Content="快捷方式" Grid.Row="1"/>
+                    <Grid Grid.Column="1" Grid.Row="1" VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="LinkFiles" IsReadOnly="True"/>
+                        <Button Content="选择" Width="60" Grid.Column="1" Margin="5 0" Click="SelectDir"/>
+                    </Grid>
+                </Grid>
+            </Expander>
+
+            <Expander Header="输出选项" IsExpanded="True" Grid.Row="1" Margin="10 10 0 0">
+                <Label Content="当前默认输出到新的Sheet" Margin="10 0"/>
+            </Expander>
+            
+            <Button Content="运行" Width="60" Height="20" Grid.Row="2" Margin="15 10" HorizontalAlignment="Right" Click="Run"/>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

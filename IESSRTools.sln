@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IESSRTools.Desktop", "IESSRTools.Desktop\IESSRTools.Desktop.csproj", "{FC0CCFD7-BAB3-4F0F-BB03-92C3391A6B77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IESSRTools.Desktop", "IESSRTools.Desktop\IESSRTools.Desktop.csproj", "{FC0CCFD7-BAB3-4F0F-BB03-92C3391A6B77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IESSRTools.Core", "IESSRTools.Core\IESSRTools.Core.csproj", "{632C79E0-259F-4BE5-8BAB-EF62F60521AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IESSRTools.Core", "IESSRTools.Core\IESSRTools.Core.csproj", "{632C79E0-259F-4BE5-8BAB-EF62F60521AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IESSRTools.Core.Test", "IESSRTools.Core.Test\IESSRTools.Core.Test.csproj", "{B3B3BCC3-6657-458F-9C28-E564F5C9E41C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IESSRTools.Core.Test", "IESSRTools.Core.Test\IESSRTools.Core.Test.csproj", "{B3B3BCC3-6657-458F-9C28-E564F5C9E41C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IESSRTools.AddIn.Excel", "IESSRTools.AddIn.Excel\IESSRTools.AddIn.Excel.csproj", "{885B2201-9937-402D-9391-264AF26369EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IESSRTools.Core.DotNetFramework", "IESSRTools.Core.DotNetFramework\IESSRTools.Core.DotNetFramework.csproj", "{003A2C30-46C2-43EA-9095-8F80784C3C3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{B3B3BCC3-6657-458F-9C28-E564F5C9E41C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3B3BCC3-6657-458F-9C28-E564F5C9E41C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3B3BCC3-6657-458F-9C28-E564F5C9E41C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{885B2201-9937-402D-9391-264AF26369EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{885B2201-9937-402D-9391-264AF26369EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{885B2201-9937-402D-9391-264AF26369EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{885B2201-9937-402D-9391-264AF26369EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{003A2C30-46C2-43EA-9095-8F80784C3C3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{003A2C30-46C2-43EA-9095-8F80784C3C3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{003A2C30-46C2-43EA-9095-8F80784C3C3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{003A2C30-46C2-43EA-9095-8F80784C3C3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
