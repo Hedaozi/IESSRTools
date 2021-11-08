@@ -29,6 +29,18 @@ namespace IESSRTools.AddIn.Excel
             Globals.ThisAddIn.TaskPanels[key].Visible = true;
         }
 
+        private void MatchValues(object sender, RibbonControlEventArgs e)
+        {
+            string key = Globals.ThisAddIn.Application.ActiveWindow.Hwnd + "MatchValues";
+            if (!Globals.ThisAddIn.TaskPanels.ContainsKey(key))
+            {
+                CustomTaskPane customTaskPane = Globals.ThisAddIn.CustomTaskPanes.Add(GenerateUserControl(new Pane.Match(), "MatchValues"), "匹配值");
+                customTaskPane.Width = 1400;
+                Globals.ThisAddIn.TaskPanels.Add(key, customTaskPane);
+            }
+            Globals.ThisAddIn.TaskPanels[key].Visible = true;
+        }
+
         private UserControl GenerateUserControl(System.Windows.Controls.UserControl wpfUserControl, string name)
         {
             ElementHost elementHost = new ElementHost()

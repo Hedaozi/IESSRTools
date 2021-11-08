@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IESSRTools.AddIn.Excel", "I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IESSRTools.Core.DotNetFramework", "IESSRTools.Core.DotNetFramework\IESSRTools.Core.DotNetFramework.csproj", "{003A2C30-46C2-43EA-9095-8F80784C3C3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IESSRTools.Core.DotNetFramework.Test", "IESSRTools.Core.DotNetFramework.Test\IESSRTools.Core.DotNetFramework.Test.csproj", "{701E72A4-1DD5-4B60-991B-DE9D5AFE2413}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{003A2C30-46C2-43EA-9095-8F80784C3C3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{003A2C30-46C2-43EA-9095-8F80784C3C3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{003A2C30-46C2-43EA-9095-8F80784C3C3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{701E72A4-1DD5-4B60-991B-DE9D5AFE2413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{701E72A4-1DD5-4B60-991B-DE9D5AFE2413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{701E72A4-1DD5-4B60-991B-DE9D5AFE2413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{701E72A4-1DD5-4B60-991B-DE9D5AFE2413}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
