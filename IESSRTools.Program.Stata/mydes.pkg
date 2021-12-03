@@ -1,0 +1,6 @@
+v 1.0。1
+d `mydes` 可以批量描述数据，适用于探索阶段。
+d Distribution-Date:   20191204
+f mydes/mydes.ado
+f mydes/mydes.sthlp
+f mydes/mydesCN.sthlp

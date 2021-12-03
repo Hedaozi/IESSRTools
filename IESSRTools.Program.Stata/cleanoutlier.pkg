@@ -1,0 +1,6 @@
+v 1.0.0
+d `cleanoutlier` 快速清洗缺失值。
+d Distribution-Date:   20191210
+f cleanoutlier/cleanoutlier.ado
+f cleanoutlier/cleanoutlier.sthlp
+f cleanoutlier/cleanoutlierCN.sthlp

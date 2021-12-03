@@ -1,0 +1,6 @@
+v 1.0.1
+d `QTransUni` 可以快速转化Stata 13及更早版本的文件编码到utf-8。
+d Distribution-Date:   20210915
+f QTransUni/QTransUni.ado
+f QTransUni/QTransUni.sthlp
+f QTransUni/QTransUniCN.sthlp

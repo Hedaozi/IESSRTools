@@ -1,0 +1,4 @@
+v 1.0.1
+d `zero2hundred` 根据最大值和最小值，将变量取值严格限定在0-100间。
+d Distribution-Date:   20211028
+f zero2hundred/zero2hundred.ado

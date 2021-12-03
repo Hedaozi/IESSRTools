@@ -1,0 +1,6 @@
+v 1.0.0
+d `margin3d` 可以绘制3D边际图。
+d Distribution-Date:   20211203
+f margin3d/margin3d.ado
+f margin3d/margin3d.sthlp
+f margin3d/margin3dCN.sthlp

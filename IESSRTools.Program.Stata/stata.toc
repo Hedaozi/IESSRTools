@@ -1,0 +1,13 @@
+v 1.0.1
+d Materials by 何凌锋
+d helingfeng@stu.xjtu.edu.cn
+d 'QTransUni': `QTransUni` 可以快速转化Stata 13及更早版本的文件编码到utf-8。
+p QTransUni
+d 'cleancoutlier': `cleancoutlier` 快速清洗缺失值。
+p cleancoutlier
+d 'mydes': `mydes` 可以批量描述数据，适用于探索阶段。
+p mydes
+d `zero2hundred` 根据最大值和最小值，将变量取值严格限定在0-100间。
+p zero2hundred
+d `margin3d` 可以绘制3D边际图。
+p margin3d
