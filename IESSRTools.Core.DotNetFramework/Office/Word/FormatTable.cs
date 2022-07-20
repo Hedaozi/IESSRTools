@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Office.Interop.Word;
+using Microsoft.Office.Core;
 
 namespace IESSRTools.Core.DotNetFramework.Office.Word
 {
@@ -43,17 +44,18 @@ namespace IESSRTools.Core.DotNetFramework.Office.Word
             fontStyle.Name = "Times New Roman";
             fontStyle.Size = 10.5F;
 
+            var wholeTableStyle = style.Table;
+            wholeTableStyle.Borders[WdBorderType.wdBorderTop].LineStyle = WdLineStyle.wdLineStyleSingle;
+            wholeTableStyle.Borders[WdBorderType.wdBorderTop].LineWidth = WdLineWidth.wdLineWidth150pt;
+            wholeTableStyle.Borders[WdBorderType.wdBorderBottom].LineStyle = WdLineStyle.wdLineStyleSingle;
+            wholeTableStyle.Borders[WdBorderType.wdBorderBottom].LineWidth = WdLineWidth.wdLineWidth150pt;
+
+
             var headRowsStyle = style.Table.Condition(WdConditionCode.wdFirstRow);
-            headRowsStyle.Borders[WdBorderType.wdBorderTop].LineStyle = WdLineStyle.wdLineStyleSingle;
-            headRowsStyle.Borders[WdBorderType.wdBorderTop].LineWidth = WdLineWidth.wdLineWidth150pt;
             headRowsStyle.Borders[WdBorderType.wdBorderBottom].LineStyle = WdLineStyle.wdLineStyleSingle;
-            headRowsStyle.Borders[WdBorderType.wdBorderTop].LineWidth = WdLineWidth.wdLineWidth100pt;
+            headRowsStyle.Borders[WdBorderType.wdBorderBottom].LineWidth = WdLineWidth.wdLineWidth100pt;
             headRowsStyle.Font.Bold = 1;
             headRowsStyle.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
-
-            var lastRowStyle = style.Table.Condition(WdConditionCode.wdLastRow);
-            lastRowStyle.Borders[WdBorderType.wdBorderBottom].LineStyle = WdLineStyle.wdLineStyleSingle;
-            lastRowStyle.Borders[WdBorderType.wdBorderBottom].LineWidth = WdLineWidth.wdLineWidth150pt;
         }
 
         public static void SetVerticalAlignCenter(Table table)
@@ -65,8 +67,7 @@ namespace IESSRTools.Core.DotNetFramework.Office.Word
 
         public static void ResetTableHeaders(Selection headers)
         {
-            headers.Borders[WdBorderType.wdBorderHorizontal].LineStyle = WdLineStyle.wdLineStyleNone;
-            headers.Rows.HeadingFormat = -1;
+            headers.Rows.HeadingFormat = (int)MsoTriState.msoTrue;
         }
     }
 }

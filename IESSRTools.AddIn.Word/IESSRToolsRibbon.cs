@@ -33,8 +33,7 @@ namespace IESSRTools.AddIn.Word
                 FormatTable.AddThreeLineTableStyle(doc);
             }
             FormatTable.FormatThreeLineTable(doc, table);
-            table.Rows.First.Select();
-            FormatTable.ResetTableHeaders(wdApp.Selection);
+            table.Rows.First.HeadingFormat = -1;
 
             if (verticalAlignCenterToggle.Checked)
             {
@@ -60,8 +59,7 @@ namespace IESSRTools.AddIn.Word
             foreach (Table table in tables)
             {
                 FormatTable.FormatThreeLineTable(doc, table);
-                table.Rows.First.Select();
-                FormatTable.ResetTableHeaders(wdApp.Selection);
+                table.Rows.First.HeadingFormat = -1;
                 if (verticalAlignCenterToggle.Checked)
                 {
                     FormatTable.SetVerticalAlignCenter(table);
