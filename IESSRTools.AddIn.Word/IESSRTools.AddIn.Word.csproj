@@ -33,7 +33,7 @@
     <PublishUrl>publish/</PublishUrl>
     <InstallUrl>https://hedaozi.com/resource/apps/IESSRTools.AddIn.Word/</InstallUrl>
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>0.1.0.2</ApplicationVersion>
+    <ApplicationVersion>0.1.0.3</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>
@@ -202,7 +202,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="app.config" />
-    <None Include="IESSRTools.AddIn.Word_TemporaryKey.pfx" />
+    <None Include="hedaozi.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -242,10 +242,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>IESSRTools.AddIn.Word_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>hedaozi.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>B1320A9EB22817D4FA9B00D1D8598B0D11567624</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>5C97723D01FD5501FC2BE11ECA2F71B50A24496C</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
