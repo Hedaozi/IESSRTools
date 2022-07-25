@@ -9,6 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace IESSRTools.AddIn.Word.Properties {
+    using System;
     
     
     /// <summary>
@@ -18,7 +19,7 @@ namespace IESSRTools.AddIn.Word.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -56,6 +57,42 @@ namespace IESSRTools.AddIn.Word.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        internal static string errorMsgCaption {
+            get {
+                return ResourceManager.GetString("errorMsgCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid number or not number!.
+        /// </summary>
+        internal static string invalidNumError {
+            get {
+                return ResourceManager.GetString("invalidNumError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No table is selected or focused!.
+        /// </summary>
+        internal static string noTable {
+            get {
+                return ResourceManager.GetString("noTable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning.
+        /// </summary>
+        internal static string warningMsgCaption {
+            get {
+                return ResourceManager.GetString("warningMsgCaption", resourceCulture);
             }
         }
     }

@@ -72,6 +72,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Office\Excel\Write.cs" />
+    <Compile Include="Office\Localization.cs" />
+    <Compile Include="Office\Word\Align.cs" />
     <Compile Include="Office\Word\FormatTable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\ConvertExtension.cs" />

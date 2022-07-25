@@ -117,55 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="button1.Label" xml:space="preserve">
-    <value>格式化所有</value>
+  <data name="errorMsgCaption" xml:space="preserve">
+    <value>错误</value>
   </data>
-  <data name="button1.ScreenTip" xml:space="preserve">
-    <value>格式化文档中的个所有表格。</value>
+  <data name="invalidNumError" xml:space="preserve">
+    <value>无效的数字！</value>
   </data>
-  <data name="button2.Label" xml:space="preserve">
-    <value>设为表头</value>
+  <data name="noTable" xml:space="preserve">
+    <value>没有表格被选中，光标也不在表格内。</value>
   </data>
-  <data name="button2.ScreenTip" xml:space="preserve">
-    <value>设置选中行为表头</value>
-  </data>
-  <data name="button2.SuperTip" xml:space="preserve">
-    <value>当表头多于一行时使用本工具</value>
-  </data>
-  <data name="button3.Label" xml:space="preserve">
-    <value>三线表</value>
-  </data>
-  <data name="button3.ScreenTip" xml:space="preserve">
-    <value>格式化当前表格为三线表</value>
-  </data>
-  <data name="button3.SuperTip" xml:space="preserve">
-    <value>将光标置于所要格式化的表格内即可。</value>
-  </data>
-  <data name="button4.ScreenTip" xml:space="preserve">
-    <value>减少小数点对齐缩进</value>
-  </data>
-  <data name="button5.ScreenTip" xml:space="preserve">
-    <value>增加小数点对齐缩进</value>
-  </data>
-  <data name="button6.ScreenTip" xml:space="preserve">
-    <value>移除小数点对齐</value>
-  </data>
-  <data name="button7.ScreenTip" xml:space="preserve">
-    <value>应用当前小数点对齐设置。</value>
-  </data>
-  <data name="decimalAlignPosition.ScreenTip" xml:space="preserve">
-    <value>设置小数点对齐</value>
-  </data>
-  <data name="decimalAlignPosition.SuperTip" xml:space="preserve">
-    <value>设置小数点对齐的字符数。</value>
-  </data>
-  <data name="group1.Label" xml:space="preserve">
-    <value>格式调整工具</value>
-  </data>
-  <data name="verticalAlignCenterToggle.Label" xml:space="preserve">
-    <value>垂直居中</value>
-  </data>
-  <data name="verticalAlignCenterToggle.ScreenTip" xml:space="preserve">
-    <value>格式化表格时，将单元格内容设置为垂直居中。</value>
+  <data name="warningMsgCaption" xml:space="preserve">
+    <value>警告</value>
   </data>
 </root>

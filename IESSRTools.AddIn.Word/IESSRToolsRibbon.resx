@@ -117,143 +117,286 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;IESSRToolsRibbon.OfficeMenu.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.OfficeMenuView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;IESSRToolsRibbon.OfficeMenu.Name" xml:space="preserve">
-    <value>IESSRToolsRibbon.OfficeMenu</value>
-  </data>
-  <data name="&gt;&gt;group1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="button3.Label" xml:space="preserve">
     <value>Three-Line Table</value>
   </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="button3.ScreenTip" xml:space="preserve">
+    <value>Format current table as three-line table</value>
   </data>
-  <data name="verticalAlignCenterToggle.Label" xml:space="preserve">
-    <value>Align Vertical Center</value>
-  </data>
-  <data name="&gt;&gt;editBox1.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;verticalAlignCenterToggle.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ToggleButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;separator1.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.SeparatorView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="group1.Label" xml:space="preserve">
-    <value>Format Tools</value>
+  <data name="button3.SuperTip" xml:space="preserve">
+    <value>No need to select total table, just move cursor within table.</value>
   </data>
   <data name="&gt;&gt;button3.Name" xml:space="preserve">
     <value>button3</value>
   </data>
-  <data name="&gt;&gt;group1.Name" xml:space="preserve">
-    <value>group1</value>
-  </data>
-  <data name="button1.Label" xml:space="preserve">
-    <value>Format All Tables</value>
-  </data>
-  <data name="&gt;&gt;verticalAlignCenterToggle.Name" xml:space="preserve">
-    <value>verticalAlignCenterToggle</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>IESSRToolsRibbon</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="editBox1.Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="&gt;&gt;separator1.Parent" xml:space="preserve">
-    <value>group1</value>
-  </data>
-  <data name="&gt;&gt;editBox1.Name" xml:space="preserve">
-    <value>editBox1</value>
-  </data>
-  <data name="&gt;&gt;verticalAlignCenterToggle.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;button2.Name" xml:space="preserve">
-    <value>button2</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GenericRibbonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
-    <value>group1</value>
+  <data name="&gt;&gt;button3.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;button3.Parent" xml:space="preserve">
     <value>group1</value>
   </data>
-  <data name="&gt;&gt;IESSRToolsRibbon.OfficeMenu.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;editBox1.Parent" xml:space="preserve">
-    <value>group1</value>
+  <data name="verticalAlignCenterToggle.Label" xml:space="preserve">
+    <value>Vertically Center</value>
+  </data>
+  <data name="verticalAlignCenterToggle.ScreenTip" xml:space="preserve">
+    <value>Align content vertically center when formatting</value>
+  </data>
+  <data name="&gt;&gt;verticalAlignCenterToggle.Name" xml:space="preserve">
+    <value>verticalAlignCenterToggle</value>
+  </data>
+  <data name="&gt;&gt;verticalAlignCenterToggle.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ToggleButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;verticalAlignCenterToggle.Parent" xml:space="preserve">
     <value>group1</value>
   </data>
-  <data name="&gt;&gt;IESSRToolsRibbon.OfficeMenu.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;separator1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;button3.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
-    <value>group1</value>
-  </data>
-  <data name="&gt;&gt;IESSRTools.Name" xml:space="preserve">
-    <value>IESSRTools</value>
-  </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
-  </data>
-  <data name="&gt;&gt;IESSRTools.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.TabView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;group1.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="&gt;&gt;verticalAlignCenterToggle.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="button2.Label" xml:space="preserve">
-    <value>Set Selection as Header</value>
+    <value>Set Header</value>
   </data>
-  <data name="editBox1.Label" xml:space="preserve">
-    <value>Decimal-point Alignment</value>
+  <data name="button2.ScreenTip" xml:space="preserve">
+    <value>Set selected rows as table's header</value>
   </data>
-  <data name="&gt;&gt;separator1.Name" xml:space="preserve">
-    <value>separator1</value>
+  <data name="button2.SuperTip" xml:space="preserve">
+    <value>Use this tool when the header includes more than one row.</value>
   </data>
-  <data name="&gt;&gt;group1.Parent" xml:space="preserve">
-    <value>IESSRTools</value>
-  </data>
-  <data name="IESSRTools.Label" xml:space="preserve">
-    <value>IESSR Tools</value>
-  </data>
-  <data name="&gt;&gt;editBox1.Type" xml:space="preserve">
-    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.EditBoxView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="&gt;&gt;button2.Name" xml:space="preserve">
+    <value>button2</value>
   </data>
   <data name="&gt;&gt;button2.Type" xml:space="preserve">
     <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+    <value>group1</value>
+  </data>
+  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="button1.Label" xml:space="preserve">
+    <value>Format All</value>
+  </data>
+  <data name="button1.ScreenTip" xml:space="preserve">
+    <value>Format all table in the document</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>group1</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;separator1.Name" xml:space="preserve">
+    <value>separator1</value>
+  </data>
+  <data name="&gt;&gt;separator1.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.SeparatorView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;separator1.Parent" xml:space="preserve">
+    <value>group1</value>
+  </data>
+  <data name="&gt;&gt;separator1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ribbonDropDownItemImpl1.Label" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ribbonDropDownItemImpl2.Label" xml:space="preserve">
+    <value>0.5</value>
+  </data>
+  <data name="ribbonDropDownItemImpl3.Label" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ribbonDropDownItemImpl4.Label" xml:space="preserve">
+    <value>1.5</value>
+  </data>
+  <data name="ribbonDropDownItemImpl5.Label" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ribbonDropDownItemImpl6.Label" xml:space="preserve">
+    <value>2.5</value>
+  </data>
+  <data name="ribbonDropDownItemImpl7.Label" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ribbonDropDownItemImpl8.Label" xml:space="preserve">
+    <value>3.5</value>
+  </data>
+  <data name="ribbonDropDownItemImpl9.Label" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ribbonDropDownItemImpl10.Label" xml:space="preserve">
+    <value>4.5</value>
+  </data>
+  <data name="ribbonDropDownItemImpl11.Label" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ribbonDropDownItemImpl12.Label" xml:space="preserve">
+    <value>5.5</value>
+  </data>
+  <data name="ribbonDropDownItemImpl13.Label" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="decimalAlignPosition.Label" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="decimalAlignPosition.ScreenTip" xml:space="preserve">
+    <value>Set decimal point alignment</value>
+  </data>
+  <data name="decimalAlignPosition.SuperTip" xml:space="preserve">
+    <value>Set decimal-aligned tabs for the selection. The unit is character.</value>
+  </data>
+  <data name="decimalAlignPosition.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;decimalAlignPosition.Name" xml:space="preserve">
+    <value>decimalAlignPosition</value>
+  </data>
+  <data name="&gt;&gt;decimalAlignPosition.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ComboBoxView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;decimalAlignPosition.Parent" xml:space="preserve">
+    <value>group1</value>
+  </data>
+  <data name="&gt;&gt;decimalAlignPosition.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="button4.Label" xml:space="preserve">
+    <value>button4</value>
+  </data>
+  <data name="button4.ScreenTip" xml:space="preserve">
+    <value>Decrease indent of decimal-aligned tabs</value>
+  </data>
+  <data name="&gt;&gt;button4.Name" xml:space="preserve">
+    <value>button4</value>
+  </data>
+  <data name="&gt;&gt;button4.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;button4.Parent" xml:space="preserve">
+    <value>buttonGroup1</value>
+  </data>
+  <data name="&gt;&gt;button4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="button5.Label" xml:space="preserve">
+    <value>button5</value>
+  </data>
+  <data name="button5.ScreenTip" xml:space="preserve">
+    <value>Increase indent of decimal-aligned tabs</value>
+  </data>
+  <data name="&gt;&gt;button5.Name" xml:space="preserve">
+    <value>button5</value>
+  </data>
+  <data name="&gt;&gt;button5.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;button5.Parent" xml:space="preserve">
+    <value>buttonGroup1</value>
+  </data>
+  <data name="&gt;&gt;button5.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button6.Label" xml:space="preserve">
+    <value>button6</value>
+  </data>
+  <data name="button6.ScreenTip" xml:space="preserve">
+    <value>Remove indent of decimal-aligned tabs</value>
+  </data>
+  <data name="&gt;&gt;button6.Name" xml:space="preserve">
+    <value>button6</value>
+  </data>
+  <data name="&gt;&gt;button6.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;button6.Parent" xml:space="preserve">
+    <value>buttonGroup1</value>
+  </data>
+  <data name="&gt;&gt;button6.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="button7.Label" xml:space="preserve">
+    <value>button7</value>
+  </data>
+  <data name="button7.ScreenTip" xml:space="preserve">
+    <value>Apply decimal-aligned settings</value>
+  </data>
+  <data name="&gt;&gt;button7.Name" xml:space="preserve">
+    <value>button7</value>
+  </data>
+  <data name="&gt;&gt;button7.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;button7.Parent" xml:space="preserve">
+    <value>buttonGroup1</value>
+  </data>
+  <data name="&gt;&gt;button7.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;buttonGroup1.Name" xml:space="preserve">
+    <value>buttonGroup1</value>
+  </data>
+  <data name="&gt;&gt;buttonGroup1.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonGroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonGroup1.Parent" xml:space="preserve">
+    <value>group1</value>
+  </data>
+  <data name="&gt;&gt;buttonGroup1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="group1.Label" xml:space="preserve">
+    <value>Format Tools</value>
+  </data>
+  <data name="&gt;&gt;group1.Name" xml:space="preserve">
+    <value>group1</value>
+  </data>
+  <data name="&gt;&gt;group1.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;group1.Parent" xml:space="preserve">
+    <value>IESSRTools</value>
+  </data>
+  <data name="&gt;&gt;group1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="IESSRTools.Label" xml:space="preserve">
+    <value>IESSR Tools</value>
+  </data>
+  <data name="&gt;&gt;IESSRTools.Name" xml:space="preserve">
+    <value>IESSRTools</value>
+  </data>
+  <data name="&gt;&gt;IESSRTools.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.TabView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>en</value>
-  </metadata>
+  <data name="&gt;&gt;IESSRToolsRibbon.OfficeMenu.Name" xml:space="preserve">
+    <value>IESSRToolsRibbon.OfficeMenu</value>
+  </data>
+  <data name="&gt;&gt;IESSRToolsRibbon.OfficeMenu.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.OfficeMenuView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;IESSRToolsRibbon.OfficeMenu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;IESSRToolsRibbon.OfficeMenu.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>IESSRToolsRibbon</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GenericRibbonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

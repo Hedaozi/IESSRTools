@@ -9,7 +9,7 @@ namespace IESSRTools.AddIn.Word
 {
     public partial class IESSRToolsRibbon
     {
-        private readonly ResourceManager rm = new ResourceManager("IESSRTools.AddIn.Word.IESSRToolsRibbon", Assembly.GetExecutingAssembly());
+        private readonly ResourceManager rm = Properties.Resources.ResourceManager;
 
         private void Ribbon1_Load(object sender, RibbonUIEventArgs e)
         {
@@ -23,7 +23,7 @@ namespace IESSRTools.AddIn.Word
             var tables = wdApp.Selection.Tables;
             if (tables.Count == 0)
             {
-                MessageBox.Show(rm.GetString("noTableNotify"));
+                MessageBox.Show(rm.GetString("noTable"), rm.GetString("warningMsgCaption"));
                 return;
             }
             var table = wdApp.Selection.Tables[1];
@@ -66,5 +66,47 @@ namespace IESSRTools.AddIn.Word
                 }
             }
         }
+
+        private void JustifyDecimalText(float value, bool modify = true)
+        {
+            if (float.TryParse(decimalAlignPosition.Text, out var positionCh))
+            {
+                positionCh = modify ? positionCh + value : value;
+                positionCh = positionCh < 0 ? 0 : positionCh;
+                decimalAlignPosition.Text = positionCh.ToString();
+                ApplyAlign(positionCh);
+            }
+            else
+            {
+                decimalAlignPosition.Text = "0";
+            }
+        }
+
+        private void JustifyDecimalAlign(object sender, RibbonControlEventArgs e)
+        {
+            if (float.TryParse(decimalAlignPosition.Text, out var positionCh) && (positionCh >= 0))
+            {
+                ApplyAlign(positionCh);
+            }
+            else
+            {
+                MessageBox.Show(rm.GetString("invalidNumError"), rm.GetString("warningMsgCaption"));
+            }
+        }
+
+        private void DecreaseAlign(object sender, RibbonControlEventArgs e) => JustifyDecimalText(-0.25F);
+
+        private void IncreaseAlign(object sender, RibbonControlEventArgs e) => JustifyDecimalText(0.25F);
+
+        private void RemoveAlign(object sender, RibbonControlEventArgs e) => JustifyDecimalText(0, false);
+
+        private void ApplyAlign(object sender, RibbonControlEventArgs e)
+        {
+            float.TryParse(decimalAlignPosition.Text, out var positionCh);
+            ApplyAlign(positionCh);
+        }
+
+        private void ApplyAlign(float positionCh) => Align.SetDecimalAlign(Globals.ThisAddIn.Application.Selection, positionCh);
+
     }
 }
