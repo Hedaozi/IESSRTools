@@ -1,0 +1,69 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="BackgroundBrush" Color="#FFF3F3F3"/>
+    <SolidColorBrush x:Key="BorderBrush" Color="#FFE5E5E5"/>
+
+    <SolidColorBrush x:Key="Disable.Foreground" Color="#FF6D6D6D"/>
+    <SolidColorBrush x:Key="TextBlock.Icons" Color="#FF0067C0"/>
+
+    <FontFamily x:Key="SegoeIcons">pack://application:,,,/IESSRTools.Style;component/Fonts/#Segoe Fluent Icons</FontFamily>
+
+    <Style x:Key="Run.Icon" TargetType="Run">
+        <Setter Property="FontFamily" Value="{DynamicResource SegoeIcons}"/>
+        <Setter Property="Foreground" Value="{DynamicResource TextBlock.Icons}"/>
+    </Style>
+
+    <Style x:Key="TextBlockTitle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="28"/>
+        <Setter Property="Margin" Value="3,0,0,20"/>
+    </Style>
+
+    <Style x:Key="TextBlockSubtitle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="19"/>
+        <Setter Property="Margin" Value="3,0,0,20"/>
+    </Style>
+
+    <Style x:Key="TextBlockHeader" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Margin" Value="0,30,0,0"/>
+    </Style>
+
+    <Style x:Key="TextBlockSubheader" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Margin" Value="0,20,0,0"/>
+    </Style>
+
+    <Style x:Key="TextBlockContent" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Margin" Value="0,0,0,14"/>
+    </Style>
+
+    <Style x:Key="LabelContent" TargetType="Label">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Height" Value="30"/>
+    </Style>
+    
+    <Style x:Key="FocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="OptionMarkFocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="14,0,0,0" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

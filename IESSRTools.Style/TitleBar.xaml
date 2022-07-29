@@ -1,0 +1,84 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/IESSRTools.Style;component/Generic.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <SolidColorBrush x:Key="TitleBarRightButton.Background" Color="Transparent"/>
+    <SolidColorBrush x:Key="TitleBarRightButton.BorderBrush" Color="Transparent"/>
+
+    <SolidColorBrush x:Key="TitleBarRightButton.MouseOver.Background" Color="#FFE9E9E9"/>
+    <SolidColorBrush x:Key="TitleBarRightButton.MouseOver.Border" Color="Transparent"/>
+    <SolidColorBrush x:Key="TitleBarRightButton.Pressed.Foreground" Color="#FF5F5F5F"/>
+    <SolidColorBrush x:Key="TitleBarRightButton.Pressed.Background" Color="#FFEDEDED"/>
+    <SolidColorBrush x:Key="TitleBarRightButton.Pressed.Border" Color="Transparent"/>
+
+    <SolidColorBrush x:Key="HeaderCloseButton.MouseOver.Foreground" Color="White"/>
+    <SolidColorBrush x:Key="HeaderCloseButton.MouseOver.Background" Color="#FFC42B1C"/>
+    <SolidColorBrush x:Key="HeaderCloseButton.Pressed.Foreground" Color="#FFEDBEBB"/>
+    <SolidColorBrush x:Key="HeaderCloseButton.Pressed.Background" Color="#FFC73C31"/>
+
+    <ControlTemplate x:Key="TitleBarRightButton" TargetType="{x:Type ButtonBase}">
+        <Border x:Name="border" Background="{DynamicResource TitleBarRightButton.Background}" BorderBrush="{DynamicResource TitleBarRightButton.BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+            <ContentPresenter x:Name="contentPresenter" Focusable="False" TextBlock.FontFamily="{DynamicResource SegoeIcons}" TextBlock.FontSize="{TemplateBinding FontSize}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="Button.IsDefaulted" Value="true">
+                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" TargetName="border" Value="{DynamicResource TitleBarRightButton.MouseOver.Background}"/>
+                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource TitleBarRightButton.MouseOver.Border}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="{DynamicResource TitleBarRightButton.Pressed.Foreground}"/>
+                <Setter Property="Background" TargetName="border" Value="{DynamicResource TitleBarRightButton.Pressed.Background}"/>
+                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource TitleBarRightButton.Pressed.Border}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="TitleBarCloseButton" TargetType="{x:Type ButtonBase}">
+        <Border x:Name="border" Background="{DynamicResource TitleBarRightButton.Background}" BorderBrush="{DynamicResource TitleBarRightButton.BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true" CornerRadius="0,6,0,0">
+            <ContentPresenter x:Name="contentPresenter" Focusable="False" TextBlock.FontFamily="{DynamicResource SegoeIcons}" TextBlock.FontSize="{TemplateBinding FontSize}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="Button.IsDefaulted" Value="true">
+                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="{DynamicResource HeaderCloseButton.MouseOver.Foreground}"/>
+                <Setter Property="Background" TargetName="border" Value="{DynamicResource HeaderCloseButton.MouseOver.Background}"/>
+                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource TitleBarRightButton.MouseOver.Border}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="{DynamicResource HeaderCloseButton.Pressed.Foreground}"/>
+                <Setter Property="Background" TargetName="border" Value="{DynamicResource HeaderCloseButton.Pressed.Background}"/>
+                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource TitleBarRightButton.Pressed.Border}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <SolidColorBrush x:Key="TitleBarLeftButton.Disable.Foreground" Color="#FFC7C7C7"/>
+    <ControlTemplate x:Key="TitleBarLeftButton" TargetType="{x:Type ButtonBase}">
+        <Border x:Name="border" Background="{DynamicResource TitleBarRightButton.Background}" BorderBrush="{DynamicResource TitleBarRightButton.BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5" SnapsToDevicePixels="true" Width="40" Height="40" VerticalAlignment="Center">
+            <ContentPresenter x:Name="contentPresenter" Focusable="False" TextBlock.FontFamily="{DynamicResource SegoeIcons}" TextBlock.FontSize="{TemplateBinding FontSize}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="Button.IsDefaulted" Value="true">
+                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" TargetName="border" Value="{DynamicResource TitleBarRightButton.MouseOver.Background}"/>
+                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource TitleBarRightButton.MouseOver.Border}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="{DynamicResource TitleBarRightButton.Pressed.Foreground}"/>
+                <Setter Property="Background" TargetName="border" Value="{DynamicResource TitleBarRightButton.Pressed.Background}"/>
+                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource TitleBarRightButton.Pressed.Border}"/>
+            </Trigger>
+            <Trigger Property="Button.IsEnabled" Value="False">
+                <Setter Property="TextBlock.Foreground" TargetName="contentPresenter" Value="{DynamicResource TitleBarLeftButton.Disable.Foreground}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+</ResourceDictionary>

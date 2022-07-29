@@ -120,6 +120,13 @@
   <data name="errorMsgCaption" xml:space="preserve">
     <value>Error</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="IESSRTools_AddIn_Word" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IESSRTools.AddIn.Word.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IESSRTools_AddIn_Word_NoShadow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IESSRTools.AddIn.Word.NoShadow.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="invalidNumError" xml:space="preserve">
     <value>Invalid number or not number!</value>
   </data>

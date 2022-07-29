@@ -117,4 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BlurHeader" xml:space="preserve">
+    <value>Radius of Blur Effect</value>
+  </data>
+  <data name="ColorHeader" xml:space="preserve">
+    <value>Color of Mask</value>
+  </data>
+  <data name="ColorInfo" xml:space="preserve">
+    <value>Theme and Transparency</value>
+  </data>
+  <data name="ColorTheme" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="ColorThemeDark" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="ColorThemeLight" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="ColorTransparency" xml:space="preserve">
+    <value>Transparency</value>
+  </data>
+  <data name="ShadowBlur" xml:space="preserve">
+    <value>Blur</value>
+  </data>
+  <data name="ShadowHeader" xml:space="preserve">
+    <value>Shadow Effect of Picture</value>
+  </data>
+  <data name="ShadowInfo" xml:space="preserve">
+    <value>Transparency, Size, Blur, Angle and Distance</value>
+  </data>
+  <data name="ShadowOffsetX" xml:space="preserve">
+    <value>Offset X</value>
+  </data>
+  <data name="ShadowOffsetY" xml:space="preserve">
+    <value>Offset Y</value>
+  </data>
+  <data name="ShadowSize" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="ShadowTransparency" xml:space="preserve">
+    <value>Transparency</value>
+  </data>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>Parameters of Acrylic</value>
+  </data>
 </root>

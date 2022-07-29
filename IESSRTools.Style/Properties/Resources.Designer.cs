@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IESSRTools.AddIn.PowerPoint.Properties {
+namespace IESSRTools.Style.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace IESSRTools.AddIn.PowerPoint.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("IESSRTools.AddIn.PowerPoint.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("IESSRTools.Style.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
