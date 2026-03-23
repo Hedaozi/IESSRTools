@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:IESSRTools.AddIn.PowerPoint.Windows"
         mc:Ignorable="d"
         Title="{Binding TWindowTitle}" WindowStartupLocation="CenterScreen"
-        Height="640" Width="500"
+        Height="620" Width="480"
         AllowsTransparency="True" Background="Transparent"
         WindowStyle="None" MouseDown="DragWindow"
         ResizeMode="NoResize">
@@ -51,10 +51,7 @@
             </Style>
         </ResourceDictionary> 
     </Window.Resources>
-    <Border x:Name="WindowBackground" Background="{StaticResource BackgroundBrush}" BorderThickness="1" BorderBrush="{StaticResource Window.Border}" CornerRadius="8" Margin="10">
-        <Border.Effect>
-            <DropShadowEffect BlurRadius="15" Color="#FFCCCCCC" Direction="0" ShadowDepth="0"/>
-        </Border.Effect>
+    <Border x:Name="WindowBackground" Background="{StaticResource BackgroundBrush}" BorderThickness="1" BorderBrush="{StaticResource Window.Border}" CornerRadius="8">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
@@ -260,8 +257,8 @@
                     <ColumnDefinition Width="10"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <Button Content="OK" FontSize="12" Grid.Column="3" Width="90"/>
-                <Button Content="Cancel" Click="CloseWindow" FontSize="12" Grid.Column="5" Width="90"/>
+                <Button Content="{Binding TOK}" Click="Submit" FontSize="12" Grid.Column="3" Width="90"/>
+                <Button Content="{Binding TCancel}" Click="CloseWindow" FontSize="12" Grid.Column="5" Width="90"/>
             </Grid>
         </Grid>
     </Border>

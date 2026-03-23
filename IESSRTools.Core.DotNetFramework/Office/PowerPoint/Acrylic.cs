@@ -1,6 +1,7 @@
 ﻿using Microsoft.Office.Interop.PowerPoint;
 using MsOffice = Microsoft.Office.Core;
 using IESSRTools.Core.DotNetFramework.Utils;
+using IESSRIO = IESSRTools.Core.DotNetFramework.Utils.IO;
 using System;
 using System.IO;
 using YamlDotNet.Serialization;
@@ -58,7 +59,7 @@ namespace IESSRTools.Core.DotNetFramework.Office.PowerPoint
         }
     }
 
-    public class AcrylicFormat
+    public class AcrylicFormat : IESSRIO.ConfigBase
     {
         public float ShadowTransparency { get; set; }
         public float ShadowSize { get; set; }
@@ -69,24 +70,12 @@ namespace IESSRTools.Core.DotNetFramework.Office.PowerPoint
         public bool LightTheme { get; set; }
         public float MaskTransparency { get; set; }
 
-        private readonly static string acrylicFormatFolderPath = Path.Combine(
+        public readonly static string FilePath = Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-            "Hedaozi", "IESSRTools", "Office"
+            "Hedaozi", "IESSRTools", "Office", "AycrylicFormat.yaml"
         );
-        private readonly static string acrrylicFormatFilePath;
-        private readonly static IDeserializer deserializer = new DeserializerBuilder()
-            .WithNamingConvention(PascalCaseNamingConvention.Instance)
-            .Build();
-        private readonly static ISerializer serializer = new SerializerBuilder()
-            .WithNamingConvention(PascalCaseNamingConvention.Instance)
-            .Build();
 
-        static AcrylicFormat()
-        {
-            acrrylicFormatFilePath = Path.Combine(acrylicFormatFolderPath, "AycrylicFormat.yaml");
-        }
-
-        public static AcrylicFormat Default()
+        public IESSRIO.ConfigBase Default()
         {
             return new AcrylicFormat
             {
@@ -99,34 +88,6 @@ namespace IESSRTools.Core.DotNetFramework.Office.PowerPoint
                 LightTheme = true,
                 MaskTransparency = 0.44F
             };
-        }
-
-        public static AcrylicFormat Load()
-        {
-            if (File.Exists(acrrylicFormatFilePath))
-            {
-                using (var stream = new StreamReader(acrrylicFormatFilePath))
-                {
-                    var yaml = stream.ReadToEnd();
-                    return deserializer.Deserialize<AcrylicFormat>(yaml);
-                }
-            }
-            var acrylicFormat = Default();
-            Save(acrylicFormat);
-            return acrylicFormat;
-        }
-
-        public static void Save(AcrylicFormat acrylicFormat)
-        {
-            if (!Directory.Exists(acrylicFormatFolderPath))
-            {
-                Directory.CreateDirectory(acrylicFormatFolderPath);
-            }
-            using (var stream = new StreamWriter(acrrylicFormatFilePath))
-            {
-                serializer.Serialize(stream, acrylicFormat);
-            }
-            return;
         }
     }
 }

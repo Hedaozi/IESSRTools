@@ -14,6 +14,9 @@ namespace IESSRTools.AddIn.PowerPoint.Windows
         private readonly AcrylicFormat acrylicFormat;
         private readonly AcrylicParametersVM vm;
 
+        public bool Ok = false;
+        public bool Permanent = false;
+
         public AcrylicParameters(AcrylicFormat acrylicFormat)
         {
             InitializeComponent();
@@ -33,6 +36,19 @@ namespace IESSRTools.AddIn.PowerPoint.Windows
             {
                 DragMove();
             }
+        }
+
+        private void Submit(object sender, RoutedEventArgs e)
+        {
+            var overwrite = MessageBox.Show(
+                "Do you want to save these parameters as default?",
+                "Option",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question
+            );
+            Permanent = overwrite == MessageBoxResult.Yes;
+            Ok = true;
+            Close();
         }
     }
 
@@ -55,6 +71,8 @@ namespace IESSRTools.AddIn.PowerPoint.Windows
         public string TColorThemeLight => rm.GetString("ColorThemeLight");
         public string TColorThemeDark => rm.GetString("ColorThemeDark");
         public string TColorTransparency => rm.GetString("ColorTransparency");
+        public string TOK => rm.GetString("OK");
+        public string TCancel => rm.GetString("Cancel");
 
         public string SShadowTransparency => $"{ShadowTransparency:F0}%";
         public string SShadowSize => $"{ShadowSize:F0}%";

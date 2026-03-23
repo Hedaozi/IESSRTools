@@ -113,6 +113,17 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Windows">
+      <HintPath>..\WinMD\Windows.WinMD</HintPath>
+    </Reference>
+    <Reference Include="Windows.Foundation.FoundationContract, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WinMD\Windows.Foundation.FoundationContract.winmd</HintPath>
+    </Reference>
+    <Reference Include="Windows.Foundation.UniversalApiContract, Version=14.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WinMD\Windows.Foundation.UniversalApiContract.winmd</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>

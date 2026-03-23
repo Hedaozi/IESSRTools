@@ -11,6 +11,7 @@
             : base(Globals.Factory.GetRibbonFactory())
         {
             InitializeComponent();
+            format = manager.Load();
         }
 
         /// <summary> 

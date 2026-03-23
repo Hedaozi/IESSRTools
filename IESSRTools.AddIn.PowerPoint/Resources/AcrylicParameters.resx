@@ -120,6 +120,9 @@
   <data name="BlurHeader" xml:space="preserve">
     <value>Radius of Blur Effect</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="ColorHeader" xml:space="preserve">
     <value>Color of Mask</value>
   </data>
@@ -137,6 +140,9 @@
   </data>
   <data name="ColorTransparency" xml:space="preserve">
     <value>Transparency</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
   </data>
   <data name="ShadowBlur" xml:space="preserve">
     <value>Blur</value>
